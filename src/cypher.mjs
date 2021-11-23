@@ -1,4 +1,4 @@
-import { scrypt, randomUUID, randomInt } from "crypto";
+import { scrypt, scryptSync, randomUUID, randomInt } from "crypto";
 
 export function getNewCypherKey() {
   return new Promise((res, rej) => {
@@ -19,4 +19,12 @@ export function getNewCypherKey() {
       }
     );
   });
+}
+
+export function getNewCypherKey_Sync() {
+  let password_UUID = randomUUID();
+  let salt_UUID = randomUUID();
+  let derivedKey_length = randomInt(1000, 2000);
+
+  return scryptSync(password_UUID, salt_UUID, derivedKey_length, { N: 1024 });
 }

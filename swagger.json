@@ -1,0 +1,68 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Node js configurator NFT CRUD",
+    "description": "My Configurator",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:8000",
+  "basePath": "/",
+
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+
+  "paths": {
+    "/api/getObjConfigurationByNum/{numElements}": {
+      "parameters": [
+        {
+          "name": "numElements",
+          "in": "path",
+          "required": true,
+          "description": "numElements you want to use",
+          "type": "integer"
+        }
+      ],
+      "get": {
+        "tags": ["Configurator"],
+        "summary": "Get all images on web page, download them",
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": { "$ref": "#/definitions/arrOfConfigurationObjects" }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "arrOfConfigurationObjects": {
+      "required": ["arrayList"],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "seed": {
+            "type": "string",
+            "example": "0bfb20d988d536b3432eb0ba6248f1afdb7b62a1915dbb116e1d9b1ae45f6311485110e66de870703a74189e70d7beca48"
+          },
+          "colors": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "rgb(255,255,255)"
+            }
+          },
+          "points": {
+            "type": "integer",
+            "example": 34
+          }
+        }
+      }
+    }
+  }
+}

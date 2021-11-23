@@ -1,5 +1,5 @@
 /* import { getNewCypherKey } from "./cypher"; */
-import { generateRandomSplash } from "./drawer.mjs";
+import { generateRandomSplash, downloadImage } from "./drawer.mjs";
 
 /* getNewCypherKey()
   .then((key) => {
@@ -9,5 +9,8 @@ import { generateRandomSplash } from "./drawer.mjs";
 
 export function _init_() {
   console.log("INIT FUNCTION CALLED");
-  generateRandomSplash(document.body);
+  generateRandomSplash();
+}
+export function _downloadImage_() {
+  downloadImage();
 }
