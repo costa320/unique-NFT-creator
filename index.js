@@ -1,4 +1,4 @@
-import { getNewCypherKey } from "./src/cypherHelpers.js";
+import { getNewCypherKey } from "./src/cypher.js";
 
 getNewCypherKey()
   .then((key) => {
