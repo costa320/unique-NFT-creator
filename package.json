@@ -1,0 +1,25 @@
+{
+  "name": "unique-nft-creator",
+  "version": "1.0.0",
+  "description": "UNIQUE non replicable (unless you have the seed... is a 128-bit value formatted into blocks of hexadecimal digits separated by a hyphen (\"-\", U+002D).) image supported by RFC 4122 cryptography;",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/costa320/unique-NFT-creator.git"
+  },
+  "keywords": [
+    "NFT",
+    "unique",
+    "UUID",
+    "RFC4122"
+  ],
+  "author": "Constantin Iacovlev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/costa320/unique-NFT-creator/issues"
+  },
+  "homepage": "https://github.com/costa320/unique-NFT-creator#readme"
+}
