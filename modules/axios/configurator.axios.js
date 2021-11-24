@@ -5,12 +5,20 @@ const axios = require("axios");
 const https = require("https");
 var fs = require("fs");
 /* MODULES */
-var configurator = require("../functions/configurator.logic");
+var Configurator = require("../functions/configurator.logic.js");
 
-const httpsAgent = new https.Agent({ keepAlive: true });
-
-exports.getAllObjConfigs = (url = "") => {
+exports.getAllObjConfigs = (numElements = 0) => {
   return new Promise((result, reject) => {
-    result([{ UUID: "TU MADRE" }]);
+    let arrPromises = [];
+    for (let i = 0; i < numElements; i++) {
+      arrPromises.push(Configurator.getRandomObject());
+    }
+    Promise.all(arrPromises)
+      .then((values) => {
+        result(values);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   });
 };

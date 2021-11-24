@@ -2,7 +2,7 @@ var express = require("express");
 const path = require("path");
 var router = express.Router();
 /* modules */
-var Configurator = require("../modules/axios/configurator.axios");
+var Configurator = require("../modules/axios/configurator.axios.js");
 
 /* GESTIONE ROUTING REACT E VARI REFRESH RICHIESTI DAL BROWSER */
 router.get("/getObjConfigurationByNum/:numElements", function (req, res, next) {

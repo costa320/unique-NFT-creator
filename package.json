@@ -1,8 +1,8 @@
 {
   "name": "unique-nft-creator",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "UNIQUE non replicable (unless you have the seed... is a 128-bit value formatted into blocks of hexadecimal digits separated by a hyphen (\"-\", U+002D).) image supported by RFC 4122 cryptography;",
-  "main": "src/index.js",
+  "main": "server.js",
   "scripts": {
     "start": "webpack serve --env devServer",
     "start:server": "node server.js",
@@ -52,8 +52,8 @@
     "style-loader": "^3.3.1",
     "swagger-ui-express": "^4.1.6",
     "two.js": "^0.7.10",
-    "webpack": "^5.64.0",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.5.0"
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }

@@ -4,7 +4,7 @@ export function getNewCypherKey() {
   return new Promise((res, rej) => {
     let password_UUID = randomUUID();
     let salt_UUID = randomUUID();
-    let derivedKey_length = randomInt(1000, 2000);
+    let derivedKey_length = 1500; /* randomInt(1000, 2000); */
 
     scrypt(
       password_UUID,
@@ -24,7 +24,7 @@ export function getNewCypherKey() {
 export function getNewCypherKey_Sync() {
   let password_UUID = randomUUID();
   let salt_UUID = randomUUID();
-  let derivedKey_length = randomInt(1000, 2000);
+  let derivedKey_length = 1500; /* randomInt(1000, 2000); */
 
   return scryptSync(password_UUID, salt_UUID, derivedKey_length, { N: 1024 });
 }
