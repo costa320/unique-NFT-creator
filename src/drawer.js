@@ -42,6 +42,13 @@ export function generateRandomSplash(
   path.stroke = config.color[2];
   path.linewidth = 4;
 
+  var text = new Two.Text("SPLASH", two.width / 2, two.height / 2, "normal");
+  text.rotation = -0.5;
+  text.family = "CurugWeb";
+  text.size = 60;
+
+  var group = two.makeGroup(path, text);
+
   two.update();
 }
 

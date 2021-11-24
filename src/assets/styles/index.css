@@ -1,0 +1,9 @@
+body {
+  background: rgb(153, 102, 255);
+  font-family: "CurugWeb";
+}
+
+@font-face {
+  font-family: "CurugWeb";
+  src: url("../fonts/Curug-YzGGo.otf") format("opentype");
+}

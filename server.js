@@ -35,6 +35,9 @@ process.env.PORT = process.env.PORT || 5000;
 app.listen(process.env.PORT);
 extras.VerbalHelper();
 
+// Serve the static files from the React app
+app.use(express.static(path.resolve(__dirname, "./dist")));
+
 if (process.env.enviroment === "DEV") {
   // opens the url in the default browser
   open(`http://localhost:${process.env.PORT}/api-docs`);

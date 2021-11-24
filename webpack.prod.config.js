@@ -65,6 +65,10 @@ module.exports = (env) => {
           exclude: /node_modules/,
           use: ["babel-loader"],
         },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/i,
+          type: "asset/resource",
+        },
       ],
     },
     optimization: {

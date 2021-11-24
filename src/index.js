@@ -6,6 +6,8 @@ import {
 } from "./drawer.js";
 import axios from "axios";
 
+import "./assets/styles/index.css";
+
 console.log("Front-End version: ", process.env.FE_VERSION);
 
 export function _init_() {
