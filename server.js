@@ -23,6 +23,8 @@ app.use(express.urlencoded({ extended: true }));
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger.json");
 
+/* CORS */
+
 /* Routes */
 app.use(router);
 app.use(PublicRoutes);

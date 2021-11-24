@@ -1,7 +1,14 @@
 import Two from "two.js";
 import { getRandomRGB } from "./helpers.js";
 
+export function generateMultipleRandomSplash(configsList) {
+  configsList.forEach((config) => {
+    generateRandomSplash(config);
+  });
+}
+
 export function generateRandomSplash(
+  config,
   elem = document.getElementById("drawing")
 ) {
   var params = {
@@ -10,7 +17,7 @@ export function generateRandomSplash(
     type: Two.Types["svg"],
     fullscreen: true,
   };
-  let two = new Two(params).appendTo(elem);
+  let two = new Two(params).appendTo(document.getElementById("drawing"));
 
   let points = getPoints(128, params);
 
