@@ -12,33 +12,35 @@ export function generateRandomSplash(
   elem = document.getElementById("drawing")
 ) {
   var params = {
-    width: 9000,
-    height: 9000,
+    width: 450,
+    height: 450,
     type: Two.Types["svg"],
-    fullscreen: true,
+    fullscreen: false,
   };
   let two = new Two(params).appendTo(document.getElementById("drawing"));
 
-  let points = getPoints(128, params);
+  let points = getPoints(config.points, params);
 
   var linearGradient = two.makeLinearGradient(
     two.width / 2,
     -two.height / 2,
     two.width / 2,
     two.height / 2,
-    new Two.Stop(0, getRandomRGB()),
+    new Two.Stop(0, config.color[0]),
     /* new Two.Stop(1, colors[1]), */
-    new Two.Stop(1, getRandomRGB())
+    new Two.Stop(1, config.color[1])
   );
 
-  var circle = two.makeCurve(points, false);
-  circle.translation.set(two.width / 2, two.height / 2);
-  circle.fill = linearGradient;
-  /* circle.fill = "white"; */
-  /* circle.noFill(); */
-  /* circle.noStroke(); */
-  circle.stroke = getRandomRGB();
-  circle.linewidth = 4;
+  var path = config.curved
+    ? two.makeCurve(points, false)
+    : two.makePath(points, false);
+  path.translation.set(two.width / 2, two.height / 2);
+  path.fill = linearGradient;
+  /* path.fill = "white"; */
+  /* path.noFill(); */
+  /* path.noStroke(); */
+  path.stroke = config.color[2];
+  path.linewidth = 4;
 
   two.update();
 }
